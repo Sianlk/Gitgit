@@ -1,13 +1,44 @@
 {
   "address": "58 Chester Road, Hounslow TW4 6HX",
   "askingPriceGBP": 625000,
-  "tenancy": { "type": "AST", "rentPcm": 2600, "rentPa": 31200 },
+  "tenancy": {
+    "type": "AST",
+    "rentPcm": 2600,
+    "rentPa": 31200
+  },
   "planning": [
-    { "ref": "P/2020/0155", "type": "Lawful Use", "desc": "Rear roof extension with two front roof windows and front porch", "status": "Granted", "date": "2020-01-20" },
-    { "ref": "PA/2020/1649", "type": "Prior Approval – Householder", "desc": "Ground floor rear extension, 6m deep, 3m eaves, 3m max height", "status": "Final Decision", "date": "2020-05-27" }
+    {
+      "ref": "P/2020/0155",
+      "type": "Lawful Use",
+      "desc": "Rear roof extension with two front roof windows and front porch",
+      "status": "Granted",
+      "date": "2020-01-20"
+    },
+    {
+      "ref": "PA/2020/1649",
+      "type": "Prior Approval \u2013 Householder",
+      "desc": "Ground floor rear extension, 6m deep, 3m eaves, 3m max height",
+      "status": "Final Decision",
+      "date": "2020-05-27"
+    }
   ],
-  "features": ["Semi-detached","Driveway","Side access","Large garden"],
-  "transport": ["Hounslow West (Piccadilly)","M4","A4","A30","A312","Heathrow"],
-  "postWorksRentPcmRange": [3450, 4000],
+  "features": [
+    "Semi-detached",
+    "Driveway",
+    "Side access",
+    "Large garden"
+  ],
+  "transport": [
+    "Hounslow West (Piccadilly)",
+    "M4",
+    "A4",
+    "A30",
+    "A312",
+    "Heathrow"
+  ],
+  "postWorksRentPcmRange": [
+    3450,
+    4000
+  ],
   "updated": "2025-08-09"
 }
