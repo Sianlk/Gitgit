@@ -1,0 +1,51 @@
+name: Seed Pulse (hourly)
+on:
+  schedule:
+    - cron: "15 * * * *"  # every hour at :15
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure or create Seed bot issue
+        id: issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {data: issues} = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            let seed = issues.find(i => i.title === 'Seed bot');
+            if (!seed) {
+              const created = await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: 'Seed bot',
+                body: 'Use `/seed key=value` in comments.'
+              });
+              seed = created.data;
+            }
+            core.setOutput('number', seed.number);
+
+      - name: Post hourly /seed comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue_number = Number("${{ steps.issue.outputs.number }}");
+            const payload = `/seed ping=hourly updated=${new Date().toISOString()}`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              body: payload
+            });
