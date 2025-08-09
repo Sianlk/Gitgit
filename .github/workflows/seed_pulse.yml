@@ -1,0 +1,30 @@
+name: Seed Pulse (daily refresh)
+
+on:
+  schedule:
+    - cron: '23 7 * * *'  # daily 07:23 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update seed artifacts
+        run: |
+          python3 scripts/seed_update.py
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/memory.json docs/feed.xml docs/sitemap.xml || true
+          git commit -m "seed: daily refresh" || exit 0
+          git push
+      - name: Ping Google/Bing sitemaps
+        run: |
+          SITE="https://sianlk.github.io/gitgit/"
+          curl -s "https://www.google.com/ping?sitemap=${SITE}sitemap.xml" || true
+          curl -s "https://www.bing.com/ping?sitemap=${SITE}sitemap.xml" || true
