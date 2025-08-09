@@ -1,0 +1,29 @@
+name: Chat Seed
+on:
+  issue_comment:
+    types: [created]
+permissions:
+  contents: write
+  issues: read
+jobs:
+  run:
+    if: startsWith(github.event.comment.body, '/seed')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update memory from comment
+        env:
+          SEED_TEXT: ${{ github.event.comment.body }}
+        run: python3 scripts/chat_seed.py
+      - name: Commit & push changes
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/memory.json docs/feed.xml docs/sitemap.xml || true
+          git commit -m "seed: from issue comment $GITHUB_RUN_ID" || exit 0
+          git push
+      - name: Ping search engines (best-effort)
+        run: |
+          SITE="https://sianlk.github.io/gitgit/"
+          curl -s "https://www.google.com/ping?sitemap=${SITE}sitemap.xml" || true
+          curl -s "https://www.bing.com/ping?sitemap=${SITE}sitemap.xml" || true
