@@ -1,6 +1,6 @@
 {
   "address": "58 Chester Road, Hounslow TW4 6HX",
-  "askingPriceGBP": 625000,
+  "askingPriceGBP": 635000,
   "tenancy": {
     "type": "AST",
     "rentPcm": 2600,
@@ -41,5 +41,5 @@
     4000
   ],
   "updated": "2025-08-09",
-  "note": "AST \u00a32,600; refs P/2020/0155 & PA/2020/1649"
+  "note": "airport uplift; pro demand"
 }
