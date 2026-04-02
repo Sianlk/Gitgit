@@ -1,0 +1,1 @@
+AI git workflow with smart commit messages
