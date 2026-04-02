@@ -1,0 +1,1 @@
+GitGit transforms your version control workflow with AI. Intelligent commit message generation, automated code review, conflict resolution assistance, and smart branch management powered by state-of-the-art language models.
