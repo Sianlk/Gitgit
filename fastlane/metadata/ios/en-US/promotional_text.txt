@@ -1,1 +1,1 @@
-AI-Powered Git Workflow Manager
+New in this version: enhanced AI performance, improved onboarding, and UI polish across GitGit.
