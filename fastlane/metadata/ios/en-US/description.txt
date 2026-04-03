@@ -1,1 +1,18 @@
-GitGit transforms your version control workflow with AI. Intelligent commit message generation, automated code review, conflict resolution assistance, and smart branch management powered by state-of-the-art language models.
+GitGit — Ship Code. Not Confusion.
+
+GitGit is a production-grade AI-powered platform built for reliability, security, and scale.
+
+KEY FEATURES:
+• Secure authentication with MFA and biometrics
+• AI-powered recommendations and automation
+• Real-time WebSocket notifications
+• Stripe-powered subscription management
+• Full GDPR compliance with data export/deletion
+• Offline-capable Progressive Web App
+• End-to-end encrypted communications
+
+SECURITY & PRIVACY:
+Your data is encrypted at rest and in transit. We comply with GDPR, CCPA, and HIPAA guidelines. Full audit logs are maintained for all critical operations.
+
+SUPPORT: https://gitgit.dev/support
+PRIVACY: https://gitgit.dev/privacy

@@ -1,1 +1,1 @@
-git,version control,AI code review,developer tools,commit,GitHub
+AI,gitgit,automation,platform,mobile
