@@ -58,7 +58,7 @@ stripe==10.12.0
 
 # Data Processing
 pandas==2.2.3
-numpy==2.1.2
+numpy==2.4.4
 scipy==1.14.1
 
 # Rate Limiting
