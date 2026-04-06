@@ -77,6 +77,6 @@ factory-boy==3.3.1
 
 # Dev Tools
 black==24.10.0
-ruff==0.7.0
+ruff==0.15.9
 mypy==1.11.2
 pre-commit==4.0.1
